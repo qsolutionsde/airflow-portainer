@@ -1,0 +1,32 @@
+package-name: airflow_portainer
+
+name: Portainer
+
+description: Portainer <https://www.ontotext.com/graphdb>
+
+dependencies:
+- apache-airflow>=2.4.0
+- docker>=6.1.3
+
+suspended: false
+versions:
+- 0.1.0
+
+integrations:
+- integration-name: Portainer
+  external-doc-url: https://www.portainer.com
+  tags: [software]
+
+hooks:
+- integration-name: Portainer
+  python-modules:
+  - airflow_portainer.hooks.portainer
+
+operators:
+- integration-name: GraphDB
+  python-modules:
+  - airflow_portainer.operators.portainer
+
+connection-types:
+- hook-class-name: airflow_portainer.hooks.PortainerHook
+  connection-type: http

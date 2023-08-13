@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "airflow-portainer"
+version = "0.1.0"
+description = "Airflow provider with hook and operators for accessing docker endpoints via portainer"
+authors = ["Andreas Schmidt <andreas@schmidt.name>"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [{include = "airflow_portainer"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+docker = ">=6.1.3"
+
+[tool.poetry.dev-dependencies]
+apache-airflow = ">=2.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
